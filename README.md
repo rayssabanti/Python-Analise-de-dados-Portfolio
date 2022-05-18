@@ -1,25 +1,63 @@
 # Portfolio - Análise de Dados utilizando Python
  
-## :pushpin:	 Objetivo 
-Analisar e descobrir correlações entre as variáveis disponivéis nos dados do filmes. 
+### :pushpin:	 Objetivo 
+Tem como objetivo aplicar as habilidades de limpeza e análise de correlações dos dados de Filmes utilizando os conceitos de DataScience.
 
-## :twisted_rightwards_arrows:	 ETL 
+### :twisted_rightwards_arrows: Disponibilização dos Dados 
 Os dados foram disponibilizados pelo [Kaggle](https://www.kaggle.com/datasets/danielgrijalvas/movies) em formato CSV. 
 
-Utilizando o pandas eu realizei a busca em cada coluna por registros nulos:
-![image](https://user-images.githubusercontent.com/61653788/160519531-7667befc-00a3-4004-bc5d-5f294199fdc6.png)
+### :bookmark: Importação das bibliotecas
+* Pandas
+* Seaborn
+* Numpy 
+* Matplotlib
+* Pyplot 
+* Math
+* re
+* datetime
+### :bookmark: Importação dos dados 
+![image](https://user-images.githubusercontent.com/61653788/169074942-5885aceb-3036-4c05-a9bc-2893610fcbd1.png)
+### :wastebasket:	Limpeza dos Dados
+####  :card_file_box:	 Buscando as colunas com nulos e preenchendo com 0 (caso existam)
+Com um for, busquei casos nulos em todas as colunas e caso encontrasse alterei para 0 
 
-e a limpeza das outras colunas:
+![image](https://user-images.githubusercontent.com/61653788/169075202-ba4bbd52-15de-472b-9c76-bded3cdfff31.png)
+
+Foram encontrados casos nas colunas:
+* rating 
+* released 
+* score 
+* votes 
+* writer 
+* star 
+* country
+* budget 
+* gross 
+* company 
+* runtime 
+ #### Verificando os tipos das colunas 
+ Percebi que algumas colunas numéricas não estavam no tipo certo, então realizei a alteração:
+ ![image](https://user-images.githubusercontent.com/61653788/169075884-f59f3e0b-685b-47d8-a8dd-7754aed2d18c.png)
+ #### Correção nas colunas RELEASED E YEAR 
+* Existem casos onde a coluna Year tem anos diferentes da Released, foi identificado que a Year pode conter o ano de liberação do teaser e que a Released seria o gabarito.
+* Extração do ano da coluna Released
+* Existem alguns casos na released que o ano não está preenchido, necessário correção.
+* Comparação com a Year
+
+![image](https://user-images.githubusercontent.com/61653788/169076737-8b4d3b62-b428-429f-8c92-66d0f7bc9cca.png)
+
+ #### Extraindo os meses da coluna Released
+ ![image](https://user-images.githubusercontent.com/61653788/169077388-04cabcc1-3a3b-4af6-b7b9-36d80cc53ea5.png)
+ 
+Transformando os meses em números para facilitar a análise.
+![image](https://user-images.githubusercontent.com/61653788/169077863-3ea15c8c-e511-4182-9dbb-771704598d05.png)
+![image](https://user-images.githubusercontent.com/61653788/169077931-4e72e9f9-b629-4a47-bbe3-a6a2920bf313.png)
+
+
+### :bookmark: Análise de Correlações :hammer_and_wrench:	
 
 
 
-## :pushpin:	 O que foi aplicado?
-* Manipulação de dados e limpeza de dados utilizando o SQL SERVER
-* Análise e criação de visualizações de dados no Powerbi 
-* Aplicação de métricas focadas no Marketing Digital:
-  * **CPA - Custo por Aquisição:** O quanto custou para a empresa cada aquisição.
-  * **Taxa de conversão:** A porcentagem de pessoas convertidas após ver o anúncio.
-  * **Custo por Clique:** O quanto que foi cobrado pelas plataformas de anúncio por clique.
-  * **Jornada de compra:** O caminho que um potencial cliente percorre antes de realizar uma compra.
-  * **Roas:** Gasto que a empresa tem sobre os anúncios pagos e o seu retorno. 
-  * **Ticket Médio:** representa o valor médio gasto por cliente.
+
+
+
